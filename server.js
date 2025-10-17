@@ -11,6 +11,10 @@ app.get('/', (req, res) => {
     res.send('Health Risk API is running. Use /calculate with query parameters.');
 });
 
+app.get('/ping', (req, res) => {
+  res.status(204).end();
+});
+
 app.get('/calculate', (req, res) => {
     const { age, feet, inches, weight, systolic, diastolic, familyHistory } = req.query;
 
