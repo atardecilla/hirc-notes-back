@@ -8,11 +8,11 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send('Health Risk API is running. Use /calculate with query parameters.');
+    res.send('Health Risk API is running. Use /calculate with query parameters or /ping to wake up the server');
 });
 
 app.get('/ping', (req, res) => {
-  res.status(204).end();
+  res.type('text/plain').status(200).send('pong');
 });
 
 app.get('/calculate', (req, res) => {
